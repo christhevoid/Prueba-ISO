@@ -1,0 +1,28 @@
+1) Obtén las lineas que contienen cualquiera de las tres cadenas
+        String1: Not
+        String2: he
+        String3: sun
+
+Solucion: grep -E "Not|he|sun" sample.txt 
+
+2) Obtén las lineas que contienen las tres cadenas
+        String1: He
+        String2: or
+
+Solucion: grep "or" sample.txt | grep "He"
+
+3) Obtén las lineas que contienen cualquiera de las dos cadenas
+        String1: a
+        String2: i
+   y además tienen obligatoriamente la cadena
+        String3: do
+
+Solucion: grep "do" sample.txt | grep -E "a|i"
+
+4) Obtén las lineas que tienen la cadena
+        String1: it
+   pero no las cadenas
+        String2: No
+        String3: no
+
+Solucion: grep "it" sample.txt | grep -v -i "no" 

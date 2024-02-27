@@ -1,0 +1,57 @@
+# [Recordatorio]
+# -w sirve para especificar que se tienen que buscar únicamente palabras
+# -o sirve para mostrar únicamente la parte de la linea que coincide
+# -i sirve para indicar que dan igual las mayúsculas y minúsculas
+
+
+
+
+1) Extra las lineas que tienen alguna palabra de 3 carácteres exactamente
+Solucion: egrep -o '\b[A-Za-z@]{3}\b' garbled.txt
+
+2) Extrae la cadena mas larga de cada linea que
+        empieza por: d
+        acaba en  : g
+Solucion: egrep -o 'd.*g' garbled.txt
+
+3) Extrae todas las cadenas de cada linea que 
+        empiezan por: d
+        a continuación 0 o más: o
+        acaba en : g
+Solucion: egrep -o 'd[o]*g' garbled.txt
+
+4) Extrae todas las cadenas de cada linea que 
+        empiezan por: d
+        a continuación 0 o más de cualquier carácter
+        acaban en  : g
+Solucion: egrep -o 'd[a-z ]*g' garbled.txt
+
+5) Extrae todas las cadenas de cada linea que 
+        empiezan por: g
+        a continuación al menos un: o
+        acaban en  : d
+Solucion: egrep -o 'g[o]+d' garbled.txt
+
+6) Extrae todas las cadenas de cada linea que 
+        empiezan por : g
+        a continuación exactamente 6: o
+        acaban en   : d
+Solucion: egrep -o 'g[o]{6}d' garbled.txt
+
+7) Extrae todas las cadenas de cada linea que 
+        empiezan por         : g
+        seguido de entre 2 y 4: o
+        acaban en           : d
+Solucion: egrep -o 'g[o]{2,4}d' garbled.txt
+
+8) Extrae todas las cadenas de cada linea que 
+        empiezan por: d
+        seguido de como mucho 2 : o
+        acaban en  : g
+Solucion: egrep -o 'd[o]{0,2}g' garbled.txt
+
+9) Extrae todas las cadenas de cada linea que 
+        empiezan por : g
+        seguido de como minimo 3: o
+        acaban en   : d
+Solucion: egrep -o 'g[o]{3,100}d' garbled.txt
